@@ -3,7 +3,7 @@ OS X 10.10 / iOS 8 Continuity Dialer Lack of Authentication Proof of Concept
 
 Author: Dan Bastone <dbastone@gdssecurity.com>
 Copyright 2015 Gotham Digital Science
-https://blog.gdssecurity.com/
+http://blog.gdssecurity.com/labs/2015/9/30/apple-os-x-1010-security-disclosure-cve-2015-3785-cve-2015-5.html
 
 Compile:
 	clang -o xpcdial xpcdial.m -F/System/Library/PrivateFrameworks/ -framework Foundation -framework TelephonyUtilities
