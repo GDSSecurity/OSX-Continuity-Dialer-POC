@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnableTransactions</key>
+	<true/>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>NSRunningFromLaunchd</key>
+		<string>1</string>
+		<key>AB_PLUGIN_PATH</key>
+		<string>/tmp</string>
+	</dict>
+	<key>Label</key>
+	<string>com.apple.telephonyutilities.callservicesd</string>
+	<key>MachServices</key>
+	<dict>
+		<key>com.apple.telephonyutilities.callservicesdaemon</key>
+		<true/>
+		<key>com.apple.telephonyutilities.callservicesdaemon.accountscontroller</key>
+		<true/>
+		<key>com.apple.private.alloy.phonecontinuity-idswake</key>
+		<true/>
+	</dict>
+	<key>LaunchEvents</key>
+	<dict>
+		<key>com.apple.distnoted.matching</key>
+		<dict>
+			<key>com.apple.callhistory.save.distributed.notification</key>
+			<dict>
+				<key>Name</key>
+				<string>com.apple.callhistory.save.distributed.notification</string>
+			</dict>
+		</dict>
+		<key>com.apple.notifyd.matching</key>
+		<dict>
+			<key>com.apple.phone.idslaunchnotification</key>
+			<dict>
+				<key>Notification</key>
+				<string>com.apple.phone.idslaunchnotification</string>
+			</dict>
+			<key>com.apple.telephonyutilities.callservicesd.fakeincomingmessage</key>
+			<dict>
+				<key>Notification</key>
+				<string>com.apple.telephonyutilities.callservicesd.fakeincomingmessage</string>
+			</dict>
+			<key>com.apple.telephonyutilities.callservicesd.fakeoutgoingmessage</key>
+			<dict>
+				<key>Notification</key>
+				<string>com.apple.telephonyutilities.callservicesd.fakeoutgoingmessage</string>
+			</dict>
+			<key>com.apple.telephonyutilities.callservicesd.kFaceTimeChangedNotification</key>
+			<dict>
+				<key>Notification</key>
+				<string>kFaceTimeChangedNotification</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/sandbox-exec</string>
+		<string>-p</string>
+		<string>(version 1)(allow default)(deny file-read* (regex #"^/System/Library/Address Book Plug-Ins/POI*"))</string>
+		<string>/System/Library/PrivateFrameworks/TelephonyUtilities.framework/callservicesd</string>
+   </array>
+	<key>EnablePressuredExit</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Adaptive</string>
+</dict>
+</plist>
